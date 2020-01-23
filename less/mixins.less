@@ -1,1 +1,47 @@
 // Mixins in here
+
+.display(@justify: space-evenly, @align: center)
+{
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+// Button
+
+.button()
+{
+    .display();
+
+    flex-flow: column;
+    background: @eastern-blue;
+    color: white;
+    width: 60%;
+    border-radius: 12px;
+    height: 15%;
+    margin-bottom: 5%;
+    font-size: 1.6rem;
+    padding: 15px 0;
+}
+
+// Animation
+
+.spin()
+{
+    width: 100px;
+    height: 100px;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+@keyframes spin 
+{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

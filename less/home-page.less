@@ -1,4 +1,23 @@
 .home {
+  padding: 0 30px;
+
+  @media @mobile 
+  {
+    padding: 0 5%;
+  }
+
+  header 
+  {
+    .display(space-between, flex-start);
+    flex-flow: column;
+    border-bottom: 2px dashed lightgrey;
+    padding-bottom: 1%;
+
+    h2 
+    {
+      padding-top: 2%;
+    }
+  }
 
   .content-section {
     margin: 30px 0;
@@ -6,16 +25,31 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
+    @media @mobile 
+    {
+      align-items: center;
+      flex-flow: column;
+    }
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile 
+      {
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile
+      {
+        width: 100%;
+        .display();
+      }
 
       img {
         border-radius: 10px;
@@ -26,6 +60,13 @@
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+
+    @media @mobile 
+    {
+      flex-flow: column-reverse;
+      padding-right: 0%;
+      .display();
+    }
 
     .text-content {
       padding-left: 1%;
@@ -42,6 +83,11 @@
     width: 75%;
     margin: 0 auto 30px;
 
+    @media @mobile 
+    {
+      width: 100%;
+    }
+
     img {
       border-radius: 10px;
     }
@@ -53,9 +99,30 @@
     display: flex;
     justify-content: space-between;
 
+    @media @mobile 
+    {
+      flex-flow: column;
+      align-items: center;
+    }
+
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      @media @mobile 
+      {
+        width: 70%;
+      }
+
+      .btn 
+      {
+        .button();
+
+        @media @mobile 
+        {
+          width: 250px;
+        }
+      }
     }
   }
 }// home
